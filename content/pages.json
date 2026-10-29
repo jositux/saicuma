@@ -1,0 +1,12 @@
+[
+ {
+  "slug": "acerca-de",
+  "title": "Acerca de SaiCuMa",
+  "html": "<p>EL <strong>S</strong>istemade <strong>A</strong>utogestiónde<strong> I</strong>nformación<strong> Cu</strong>lturalde<strong> M</strong>isiones<strong> A</strong>rgentina es una plataforma Web gratuita diseñada para que los usuarios encuentren en ella toda la información pertinente a la cultura de la provincia. Saber cómo y a quién contactar efectivamente. Y, asimismo, permite que los usuarios puedan ingresar sus datos, ofreciendo sus servicios para que la comunidad pueda acceder a los recursos y trabajadores ya existentes en nuestra región.</p>\n<p>A través de este dispositivo informático, apuntamos a la creación de una red de fomento y una base de datos de información en la cual podamos participar todos los trabajadores de la cultura. Para ello se establecieron los siguientes roles de usuarios:</p>\n<div class=\"rol acerca-persona\">\n<p><strong>Persona</strong> física. Ej: Artista, Técnico, Investigador, DG, Docente, Gestor, Productor, etc.</p>\n</div>\n<div class=\"rol acerca-colectivo\">\n<p><strong>Colectivos</strong> o Grupos. Ej: Murga, Grupos de danza, Grupos de diseño, Activistas.</p>\n</div>\n<div class=\"rol acerca-institucion\">\n<p><strong>Instituciones</strong> públicas o privadas. Ej: Casas de la cultura, Universidades, ONGs, Museos, etc.</p>\n</div>"
+ },
+ {
+  "slug": "contact",
+  "title": "Contacto",
+  "html": "<a id=\"main-content\"></a>\n\n<div class=\"panel-display panel-1col clearfix\">\n<div class=\"panel-panel panel-col\">\n<div><div class=\"panel-pane pane-custom pane-1\">\n<div class=\"pane-content\">\n </div>\n</div>\n<div class=\"panel-separator\"></div><div class=\"panel-pane pane-block pane-block-2\">\n<div class=\"pane-content\">\n<p>Estamos para ayudarte cualquiera sea tu problema, consulta o sugerencia. Envíanos un mensaje utilizando el siguiente formulario de contacto o bien a<strong> <a href=\"mailto:info@saicuma.com.ar\" rel=\"noopener noreferrer\" target=\"_blank\">info@saicuma.com.ar</a></strong> y te responderemos.</p>\n</div>\n</div>\n<div class=\"panel-separator\"></div><div class=\"panel-pane pane-contact\">\n<div class=\"pane-content\">\n </div>\n</div>\n</div>\n</div>\n</div>"
+ }
+]
