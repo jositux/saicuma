@@ -1,0 +1,274 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------
+   Tokens: shadcn/ui + identidad SAICuMA
+   ------------------------------------------------------------------ */
+:root {
+  --radius: 0.5rem;
+
+  /* Identidad (tema claro) */
+  --brand: #c62f2a; /* rojo SAICuMA, para rellenos */
+  --brand-ink: #9e211d; /* rojo para texto y enlaces (contraste AA) */
+  --ink: #201a17;
+  --canvas: #ffffff; /* superficies: tarjetas, encabezado */
+  --stone: #f3f1ee; /* fondo general */
+  --line: #e4e0db;
+  --muted-ink: #6b625c;
+  --veil: rgba(198, 47, 42, 0.28); /* velo rojo del mosaico */
+  --shadow: rgba(32, 26, 23, 0.35);
+
+  /* Tipos de perfil */
+  --type-persona: #c62f2a;
+  --type-colectivo: #2f6b45;
+  --type-institucion: #a86f12;
+
+  /* Herencia del sitio 2014 */
+  --dot: rgba(32, 26, 23, 0.07); /* fondo punteado */
+  --bar-top: #2e2b2a; /* barra negra con degradé */
+  --bar-bottom: #0b0a09;
+  --slate: #2e3436; /* pie gris pizarra */
+  --slate-ink: #babdb6;
+
+  color-scheme: light;
+}
+
+/* Tema oscuro: la tierra colorada de noche, no un negro genérico */
+.dark {
+  --brand: #cf3d35;
+  --brand-ink: #ff8f85;
+  --ink: #f3eae4;
+  --canvas: #211917;
+  --stone: #17110f;
+  --line: #3a2c27;
+  --muted-ink: #b9a8a0;
+  --veil: rgba(207, 61, 53, 0.42);
+  --shadow: rgba(0, 0, 0, 0.6);
+
+  --type-persona: #f0685d;
+  --type-colectivo: #62b884;
+  --type-institucion: #e3a845;
+
+  --dot: rgba(255, 235, 225, 0.045);
+  --bar-top: #2a1f1c;
+  --bar-bottom: #0e0908;
+  --slate: #0f0b0a;
+  --slate-ink: #a8968e;
+
+  color-scheme: dark;
+}
+
+:root,
+.dark {
+  /* shadcn */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--canvas);
+  --card-foreground: var(--ink);
+  --popover: var(--canvas);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand);
+  --primary-foreground: #ffffff;
+  --secondary: var(--stone);
+  --secondary-foreground: var(--ink);
+  --muted: var(--stone);
+  --muted-foreground: var(--muted-ink);
+  --accent: var(--stone);
+  --accent-foreground: var(--ink);
+  --destructive: #b42318;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--brand);
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-literata), Georgia, serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-ink: var(--ink);
+  --color-canvas: var(--canvas);
+  --color-stone: var(--stone);
+  --color-line: var(--line);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-stone font-sans text-foreground antialiased;
+    /* El punteado del fondo original (point.png), hecho en CSS */
+    background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+    background-size: 7px 7px;
+    transition: background-color 0.2s ease;
+  }
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+/* Títulos: Fraunces, serif editorial con ejes ópticos. "SOFT" redondea los remates
+   y la itálica (WONK) le da un acento manuscrito a la palabra clave de cada título. */
+.display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 60, "WONK" 0;
+  font-weight: 540;
+  line-height: 0.94;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+.display em,
+.section-title em {
+  font-style: italic;
+  font-weight: 420;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  color: var(--brand-ink);
+  letter-spacing: -0.02em;
+}
+.section-title {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 60, "WONK" 0;
+  font-size: 1.85rem;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Barra superior: negra con degradé y filete rojo, como el encabezado original */
+.top-bar {
+  background: linear-gradient(var(--bar-top), var(--bar-bottom));
+  border-top: 4px solid var(--brand);
+  color: #f4ecea;
+}
+
+/* Texto largo (bios, Acerca de) */
+.prose-saicuma {
+  font-family: var(--font-literata), Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: 68ch;
+  overflow-wrap: break-word;
+}
+.prose-saicuma > * + * {
+  margin-top: 1em;
+}
+.prose-saicuma a {
+  color: var(--brand-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-saicuma ul,
+.prose-saicuma ol {
+  padding-left: 1.25em;
+}
+.prose-saicuma ul {
+  list-style: disc;
+}
+.prose-saicuma ol {
+  list-style: decimal;
+}
+.prose-saicuma img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Entrada de página: un solo fundido, discreto */
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.page-in {
+  animation: page-in 0.45s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-in {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Fundido de la grilla al filtrar (View Transitions)
+   La vieja se va rápido; la nueva llega un poco después, sin saltos.
+   ------------------------------------------------------------------ */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.grid-out) {
+  animation: 220ms cubic-bezier(0.4, 0, 1, 1) both vt-fade-out;
+}
+::view-transition-new(.grid-in) {
+  animation:
+    420ms cubic-bezier(0.2, 0.7, 0.2, 1) 140ms both vt-fade-in,
+    520ms cubic-bezier(0.2, 0.7, 0.2, 1) 140ms both vt-rise;
+}
+::view-transition-group(.grid-in),
+::view-transition-group(.grid-out) {
+  animation-duration: 520ms;
+}
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+@keyframes vt-rise {
+  from {
+    translate: 0 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

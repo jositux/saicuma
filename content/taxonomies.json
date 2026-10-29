@@ -1,0 +1,158 @@
+{
+ "disciplines": [
+  {
+   "id": "3",
+   "name": "Artes"
+  },
+  {
+   "id": "23",
+   "name": "Letras"
+  },
+  {
+   "id": "6",
+   "name": "Audiovisuales"
+  },
+  {
+   "id": "2",
+   "name": "Diseño"
+  },
+  {
+   "id": "8",
+   "name": "Docencia"
+  },
+  {
+   "id": "10",
+   "name": "Fotografía"
+  },
+  {
+   "id": "7",
+   "name": "Investigación"
+  },
+  {
+   "id": "4",
+   "name": "Música"
+  },
+  {
+   "id": "5",
+   "name": "Producción y Gestión"
+  },
+  {
+   "id": "9",
+   "name": "Teatro"
+  },
+  {
+   "id": "11",
+   "name": "Otros"
+  }
+ ],
+ "cities": [
+  {
+   "id": "16",
+   "name": "A. Del Valle"
+  },
+  {
+   "id": "39",
+   "name": "Alba Posse"
+  },
+  {
+   "id": "13",
+   "name": "Apóstoles"
+  },
+  {
+   "id": "38",
+   "name": "B. de Irigoyen"
+  },
+  {
+   "id": "35",
+   "name": "Cainguás"
+  },
+  {
+   "id": "31",
+   "name": "Campo Grande"
+  },
+  {
+   "id": "25",
+   "name": "Candelaria"
+  },
+  {
+   "id": "17",
+   "name": "Capioví"
+  },
+  {
+   "id": "36",
+   "name": "Concepción"
+  },
+  {
+   "id": "32",
+   "name": "El Soberbio"
+  },
+  {
+   "id": "26",
+   "name": "Eldorado"
+  },
+  {
+   "id": "27",
+   "name": "Jardín América"
+  },
+  {
+   "id": "14",
+   "name": "Leandro N. Alem"
+  },
+  {
+   "id": "22",
+   "name": "Montecarlo"
+  },
+  {
+   "id": "1",
+   "name": "Oberá"
+  },
+  {
+   "id": "19",
+   "name": "Posadas"
+  },
+  {
+   "id": "33",
+   "name": "Puerto Esperanza"
+  },
+  {
+   "id": "21",
+   "name": "Puerto Iguazú"
+  },
+  {
+   "id": "28",
+   "name": "Puerto Libertad"
+  },
+  {
+   "id": "18",
+   "name": "Puerto Rico"
+  },
+  {
+   "id": "20",
+   "name": "San Ignacio"
+  },
+  {
+   "id": "15",
+   "name": "San Javier"
+  },
+  {
+   "id": "34",
+   "name": "San Martín"
+  },
+  {
+   "id": "24",
+   "name": "San Pedro"
+  },
+  {
+   "id": "30",
+   "name": "San Vicente"
+  },
+  {
+   "id": "29",
+   "name": "Santa Ana"
+  },
+  {
+   "id": "37",
+   "name": "Wanda"
+  }
+ ]
+}
