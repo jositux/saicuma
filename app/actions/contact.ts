@@ -23,6 +23,8 @@ export type ContactState = {
   errors?: Partial<Record<ContactField, string>>;
   /** Lo que escribió la persona, para no perderlo si algo falla. */
   values?: Partial<Record<ContactField, string>>;
+  /** Marca de cada envío exitoso, para vaciar el formulario y dejarlo listo. */
+  sentId?: number;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -60,7 +62,7 @@ export async function sendContact(_prev: ContactState, formData: FormData): Prom
 
   // Campo trampa: las personas no lo ven; los robots suelen llenarlo.
   if (clean(formData.get("website"), 200)) {
-    return { status: "ok", message: "¡Gracias! Recibimos tu mensaje." };
+    return { status: "ok", message: "Recibimos tu mensaje.", sentId: Date.now() };
   }
 
   const errors: ContactState["errors"] = {};
@@ -153,5 +155,6 @@ export async function sendContact(_prev: ContactState, formData: FormData): Prom
   return {
     status: "ok",
     message: "Recibimos tu mensaje. Te mandamos una confirmación por correo y te vamos a responder pronto.",
+    sentId: Date.now(),
   };
 }

@@ -17,18 +17,6 @@ const field = "bg-canvas text-base aria-invalid:border-brand-ink aria-invalid:ri
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(sendContact, initialState);
 
-  if (state.status === "ok") {
-    return (
-      <div role="status" className="page-in flex flex-col items-start gap-4 py-6">
-        <CircleCheckIcon className="size-9 text-brand" strokeWidth={1.6} />
-        <p className="display text-[1.9rem] text-ink">
-          <em>¡Gracias!</em>
-        </p>
-        <p className="m-0 text-base leading-relaxed text-ink">{state.message}</p>
-      </div>
-    );
-  }
-
   const err = (name: ContactField) => state.errors?.[name];
   const val = (name: ContactField) => state.values?.[name] ?? "";
   const a11y = (name: ContactField, id: string) => ({
@@ -37,13 +25,24 @@ export function ContactForm() {
   });
 
   return (
-    // La key fuerza a restaurar lo escrito si el servidor devolvió un error.
+    // La key vacía el formulario tras un envío y restaura lo escrito si hubo un error.
     <form
       action={formAction}
-      key={state.values ? JSON.stringify(state.values) : "nuevo"}
+      key={state.status === "ok" ? `enviado-${state.sentId}` : state.values ? JSON.stringify(state.values) : "nuevo"}
       noValidate
       className="mt-2 grid gap-5"
     >
+      {state.status === "ok" ? (
+        <div
+          role="status"
+          className="page-in flex items-start gap-3 rounded-md bg-brand/[0.06] p-4 ring-1 ring-brand/20"
+        >
+          <CircleCheckIcon className="mt-0.5 size-5 shrink-0 text-brand" strokeWidth={1.8} />
+          <p className="m-0 text-[0.95rem] leading-relaxed text-ink">
+            <strong className="font-semibold">¡Gracias!</strong> {state.message} Si querés, podés escribirnos otro.
+          </p>
+        </div>
+      ) : null}
       <Field id="your-name" label="Nombre (obligatorio)" error={err("name")}>
         <Input
           id="your-name"
