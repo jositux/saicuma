@@ -4,7 +4,7 @@ export const SITE = {
   longName: "Sistema de Autogestión de Información Cultural de Misiones, Argentina",
   tagline: "Información cultural de Misiones, Argentina",
   url: "https://www.saicuma.org",
-  email: "info@saicuma.com.ar",
+  email: "info@saicuma.org",
   facebook: "https://www.facebook.com/saicuma",
 };
 
